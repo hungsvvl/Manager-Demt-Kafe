@@ -82,7 +82,7 @@ int main() {
   do{
     system ("cls");
     case 1 : 
-      nvpvu::nhap();
+      nv::nhap();
       break;
     default: "nhap lai";
   }
