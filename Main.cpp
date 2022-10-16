@@ -289,14 +289,14 @@ int main() {
 	int u;
 	do{
 	system ("cls");
-    cout << "\n\n Lua chon cong viec theo so \n\n";
-    cout << " 1. Dang ki ban doc \n";
-    cout << " 2. Nhap sach \n";
-    cout << " 3. Muon sach \n";
-    cout << " 4. Tra sach \n";
-    cout << " 5. Danh sach ban doc\n";
-    cout << " 6. Danh sach sach\n";
-    cout << " 7. Thoat khoi chuong trinh\n";
+    cout << "Lua chon cong viec theo so"<<endl;
+    cout << " 1. Dang ki ban doc"<<endl;
+    cout << " 2. Nhap sach "<<endl;
+    cout << " 3. Muon sach "<<endl;
+    cout << " 4. Tra sach"<<endl;
+    cout << " 5. Danh sach ban doc"<<endl;
+    cout << " 6. Danh sach sach"<<endl;
+    cout << " 7. Thoat khoi chuong trinh"<<endl;
     cin >> u;
      switch(u){
 
