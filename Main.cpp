@@ -1,14 +1,8 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-using std::setw;
-using std::setw;
-using std::strlen;
-using std::strcpy;
 #include <conio.h>
 #include <iomanip>
-using std::cout;
-using std ::cin;
 class sach;
 class dausach;
 class phieumuon;
