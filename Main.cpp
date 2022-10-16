@@ -1,11 +1,18 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
+using std::setw;
+using std::setw;
+using std::strlen;
+using std::strcpy;
+#include <conio.h>
+#include <iomanip>
+using std::cout;
+using std ::cin;
 class sach;
 class dausach;
 class phieumuon;
-class bandoc
-{
+class bandoc {
     friend class phieumuon;
 private:
     char* ten;
@@ -103,16 +110,16 @@ public:
 };
 int bandoc::sobandoc = 0;
 bandoc* bandoc::cacbandoc[100];
-void bandoc::dangki()
+void bandoc::dangki()	
 {
     char ma[80];
-    cout << "Ma ban doc : ";
+    cout << "Ma ban doc : "<<endl;
     cin.getline(ma, sizeof(ma));
     char ten[80];
-    cout << " Ten ban doc : ";
+    cout << "Ten ban doc : ";
     cin.getline(ten, sizeof(ten));
     cacbandoc[sobandoc++] = new bandoc(ma, ten);
-    cout << " Ban doc " << ten << " da duoc dang ki \n ";
+    cout << " Ban doc " << ten << " voi ma so la "<< ma << " da duoc dang ki "<<endl;
 }
 bandoc* bandoc::timbd(char* ma)
 {
@@ -170,10 +177,14 @@ void bandoc::tra(dausach* right)
     cout << "Ban da ko muon quyen sach nay \n";
 }
 void bandoc::inds()
+
 {
     for (int i = 0; i < sobandoc; i++)
         cout << cacbandoc[i]->ma << setw(5) << cacbandoc[i]->ten << setw(5) << cacbandoc[i]->somuon;
+         if (sobandoc==0);
+         cout<<"khong co ban doc nao trong thu vien"<<endl;
 }
+
 int sach::sosach = 0;
 sach* sach::khosach[500];
 sach::sach(char* ma_, char* ten_, int n)
@@ -243,6 +254,8 @@ void sach::inds()
 {
     for (int i = 0; i < sosach; i++)
         cout << khosach[i]->ma, khosach[i]->ten, khosach[i]->sodausach;
+        if(sosach==0);
+        cout<<"khong co sach nao duoc nhap vao"<<endl;
 }
 void muon()
 {
@@ -262,7 +275,7 @@ void muon()
 }
 void tra()
 {
-    char mabd[80];
+    char mabd[80], mas[80];
     cout << "Ma ban doc : ";
     cin.getline(mabd, sizeof(mabd));
     bandoc* bd = bandoc::timbd(mabd);
@@ -271,7 +284,6 @@ void tra()
         cout << "Ma ban doc nay chua duoc dang ki \n";
         return;
     }
-    char mas[80];
     cout << "Ma sach tra : ";
     cin.getline(mas, sizeof(mas));
     int id;
@@ -289,14 +301,14 @@ int main() {
 	int u;
 	do{
 	system ("cls");
-    cout << "Lua chon cong viec theo so"<<endl;
-    cout << " 1. Dang ki ban doc"<<endl;
-    cout << " 2. Nhap sach "<<endl;
-    cout << " 3. Muon sach "<<endl;
-    cout << " 4. Tra sach"<<endl;
-    cout << " 5. Danh sach ban doc"<<endl;
-    cout << " 6. Danh sach sach"<<endl;
-    cout << " 7. Thoat khoi chuong trinh"<<endl;
+	    cout << "Lua chon cong viec theo so"<<endl;
+	    cout << " 1. Dang ki ban doc"<<endl;
+	    cout << " 2. Nhap sach "<<endl;
+	    cout << " 3. Muon sach "<<endl;
+	    cout << " 4. Tra sach"<<endl;
+	    cout << " 5. Danh sach ban doc"<<endl;
+	    cout << " 6. Danh sach sach"<<endl;
+	    cout << " 7. Thoat khoi chuong trinh"<<endl;
     cin >> u;
      switch(u){
 
@@ -352,5 +364,4 @@ int main() {
   system("pause");
   return 0;	
 }
-
 
