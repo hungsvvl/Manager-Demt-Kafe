@@ -144,7 +144,7 @@ phieumuon* bandoc::muon(char* masach)
         return 0;
     }
     dausach* dausach = sach->timchuamuon();
-    if (dausach == 0)
+if (dausach == 0)
     {
         cout << "Sach nay da bi muon het \n";
         return 0;
@@ -175,14 +175,14 @@ void bandoc::tra(dausach* right)
 void bandoc::inds()
 
 {
-	if (sobandoc==0){
+	if (sobandoc==0)
          cout<<"khong co ban doc nao trong thu vien"<<endl;
-     }
-         else {
-		 
-    for (int i = 0; i < sobandoc; i++)
-        cout << cacbandoc[i]->ma << setw(5) << cacbandoc[i]->ten << setw(5) << cacbandoc[i]->somuon;
-     }
+    else {
+    	cout<<"Ma\t"<<"Ten\t"<<"so muon\t"<<endl;
+		for (int i = 0; i < sobandoc; i++)
+        	cout << cacbandoc[i]->ma << "\t" << cacbandoc[i]->ten << "\t"  << cacbandoc[i]->somuon<<endl;
+		}
+        
 }
 
 int sach::sosach = 0;
@@ -231,9 +231,9 @@ dausach* sach::timdausach(char* masach, int id)
 }
 void sach::nhapsach()
 {
-	int h;
+	int k;
     char ma[80];
-    cin.getline(ma, sizeof(h));
+	cin.getline(ma, sizeof(k));
     cout << "Ma sach :";
     cin.getline(ma, sizeof(ma));
     char ten[80];
@@ -254,20 +254,19 @@ void sach::xoadl()
 }
 void sach::inds()
 {
-	if(sosach==0){
-        cout<<"khong co sach nao duoc nhap vao"<<endl;
-    }
-    else {
     for (int i = 0; i < sosach; i++)
         cout << khosach[i]->ma, khosach[i]->ten, khosach[i]->sodausach;
-}
+        if(sosach==0);
+        cout<<"khong co sach nao duoc nhap vao"<<endl;
 }
 void muon()
 {
+	int k;
     char mabd[80];
+    cin.getline(mabd, sizeof(k));
     cout << "Ma ban doc : ";
     cin.getline(mabd, sizeof(mabd));
-    bandoc* bd = bandoc::timbd(mabd);
+bandoc* bd = bandoc::timbd(mabd);
     if (bd == 0)
     {
         cout << "Ma ban doc nay chua duoc dang ki \n ";
@@ -306,56 +305,49 @@ int main() {
 	int u;
 	do{
 	system ("cls");
-	    cout << "Lua chon cong viec theo so"<<endl;
-	    cout << " 1. Dang ki ban doc"<<endl;
-	    cout << " 2. Nhap sach "<<endl;
-	    cout << " 3. Muon sach "<<endl;
-	    cout << " 4. Tra sach"<<endl;
-	    cout << " 5. Danh sach ban doc"<<endl;
-	    cout << " 6. Danh sach sach"<<endl;
-	    cout << " 7. Thoat khoi chuong trinh"<<endl;
+	 	cout << "************************************"<<endl;
+	 	cout << "*             MENU                 *"<<endl;
+	    	cout << "* 1. Dang ki ban doc               *"<<endl;
+	    	cout << "* 2. Nhap sach                     *"<<endl;
+	    	cout << "* 3. Muon sach                     *"<<endl;
+	    	cout << "* 4. Tra sach                      *"<<endl;
+	    	cout << "* 5. Danh sach ban doc             *"<<endl;
+	    	cout << "* 6. Danh sach sach                *"<<endl;
+	    	cout << "* 7. Thoat khoi chuong trinh       *"<<endl;
+	    	cout << "************************************"<<endl;
+	    	cout << "chon cong viec ban muon thuc hien: ";
     cin >> u;
      switch(u){
-
-    case 1 : 
-    {
-	
-      bandoc::dangki();
-      system("pause");
-      break;
-  }
-      case 2: 
-      {
+    case 1 : {
+	bandoc::dangki();
+      	system("pause");
+      	break;
+	}
+    case 2: {
       	sach::nhapsach();
       	system("pause");
       	break;
-      }
-    case 3:
-    	{
+    }
+    case 3: {
       	muon();
       	system("pause");
-    break;
-}
-    case 4 :
-	{
+    	break;
+	}
+    case 4: {
     	tra();
+	system("pause");
+	break;
+	}
+    case 5: {
+		bandoc::inds();
 		system("pause");
 		break;
-	}
-
-    case 5: 
-	{
-			bandoc::inds();
-			system("pause");
-		break;
-  }
-
-    case 6:
-    	{
+  	}
+	case 6: {
       	sach::inds();
       	system("pause");
-    break;
-}
+    	break;
+	}
     case 0:
     	{
 		
@@ -369,4 +361,3 @@ int main() {
   system("pause");
   return 0;	
 }
-
