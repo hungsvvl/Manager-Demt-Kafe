@@ -302,7 +302,7 @@ int main() {
 	    cout << " 4. Tra sach"<<endl;
 	    cout << " 5. Danh sach ban doc"<<endl;
 	    cout << " 6. Danh sach sach"<<endl;
-	    cout << " 7. Thoat khoi chuong trinh"<<endl;
+	    cout << " 0. Thoat khoi chuong trinh"<<endl;
     cin >> u;
      switch(u){
 
