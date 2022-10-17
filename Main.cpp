@@ -106,7 +106,9 @@ int bandoc::sobandoc = 0;
 bandoc* bandoc::cacbandoc[100];
 void bandoc::dangki()	
 {
+	int k;
     char ma[80];
+    cin.getline(ma, sizeof(k));
     cout << "Ma ban doc : "<<endl;
     cin.getline(ma, sizeof(ma));
     char ten[80];
@@ -173,10 +175,14 @@ void bandoc::tra(dausach* right)
 void bandoc::inds()
 
 {
+	if (sobandoc==0){
+         cout<<"khong co ban doc nao trong thu vien"<<endl;
+     }
+         else {
+		 
     for (int i = 0; i < sobandoc; i++)
         cout << cacbandoc[i]->ma << setw(5) << cacbandoc[i]->ten << setw(5) << cacbandoc[i]->somuon;
-         if (sobandoc==0);
-         cout<<"khong co ban doc nao trong thu vien"<<endl;
+     }
 }
 
 int sach::sosach = 0;
@@ -225,7 +231,9 @@ dausach* sach::timdausach(char* masach, int id)
 }
 void sach::nhapsach()
 {
+	int h;
     char ma[80];
+    cin.getline(ma, sizeof(h));
     cout << "Ma sach :";
     cin.getline(ma, sizeof(ma));
     char ten[80];
@@ -246,10 +254,13 @@ void sach::xoadl()
 }
 void sach::inds()
 {
+	if(sosach==0){
+        cout<<"khong co sach nao duoc nhap vao"<<endl;
+    }
+    else {
     for (int i = 0; i < sosach; i++)
         cout << khosach[i]->ma, khosach[i]->ten, khosach[i]->sodausach;
-        if(sosach==0);
-        cout<<"khong co sach nao duoc nhap vao"<<endl;
+}
 }
 void muon()
 {
@@ -302,7 +313,7 @@ int main() {
 	    cout << " 4. Tra sach"<<endl;
 	    cout << " 5. Danh sach ban doc"<<endl;
 	    cout << " 6. Danh sach sach"<<endl;
-	    cout << " 0. Thoat khoi chuong trinh"<<endl;
+	    cout << " 7. Thoat khoi chuong trinh"<<endl;
     cin >> u;
      switch(u){
 
