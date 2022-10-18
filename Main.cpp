@@ -109,7 +109,7 @@ void bandoc::dangki()
 	int k;
     char ma[80];
     cin.getline(ma, sizeof(k));
-    cout << "Ma ban doc : "<<endl;
+    cout << "Ma ban doc : ";
     cin.getline(ma, sizeof(ma));
     char ten[80];
     cout << "Ten ban doc : ";
@@ -178,10 +178,10 @@ void bandoc::inds()
 	if (sobandoc==0){
          cout<<"khong co ban doc nao trong thu vien"<<endl;
      }
-         else {
-		 
-    for (int i = 0; i < sobandoc; i++)
-        cout << cacbandoc[i]->ma << setw(5) << cacbandoc[i]->ten << setw(5) << cacbandoc[i]->somuon;
+    else {
+		cout << "Ma\tTen\tSomuon"<<endl;
+    	for (int i = 0; i < sobandoc; i++)
+        	cout << cacbandoc[i]->ma << "\t" << cacbandoc[i]->ten << "\t" << cacbandoc[i]->somuon<<endl;
      }
 }
 
@@ -375,4 +375,3 @@ int main() {
   system("pause");
   return 0;	
 }
-
