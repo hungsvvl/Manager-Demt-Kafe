@@ -186,7 +186,7 @@ void bandoc::inds()
 }
 
 int sach::sosach = 0;
-sach* sach::khosach[500];
+sach * sach::khosach[500];
 sach::sach(char* ma_, char* ten_, int n)
 {
     ma = new char[strlen(ma_) + 1];
@@ -198,7 +198,7 @@ sach::sach(char* ma_, char* ten_, int n)
     for (int i = 0; i < sodausach; i++)
         cacdausach[i] = new dausach(this, i + 1);
 }
-sach::~sach()
+sach::sach()
 {
     delete[] ma;
     delete[] ten;
@@ -206,7 +206,7 @@ sach::~sach()
         delete cacdausach[i];
     delete[] cacdausach;
 }
-dausach* sach::timchuamuon()
+dausach * sach::timchuamuon()
 {
     for (int i = 0; i < sodausach; i++)
         if (cacdausach[i]->chuamuon())
@@ -220,9 +220,9 @@ sach* sach::timsach(char* masach)
             return khosach[i];
     return 0;
 }
-dausach* sach::timdausach(char* masach, int id)
+dausach * sach::timdausach(char* masach, int id)
 {
-    sach* sach1 = timsach(masach);
+    sach * sach1 = timsach(masach);
     if (sach1 == 0) return 0;
     for (int i = 0; i < sach1->sodausach; i++)
         if (sach1->cacdausach[i]->id == id)
