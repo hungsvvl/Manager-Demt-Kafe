@@ -259,7 +259,8 @@ void sach::inds()
     }
     else {
     for (int i = 0; i < sosach; i++)
-        cout << khosach[i]->ma, khosach[i]->ten, khosach[i]->sodausach;
+    	
+        cout << "Ma sach : " << khosach[i]->ma <<"Ten sach : " << khosach[i]->ten << "So dau sach : " << khosach[i]->sodausach << endl;
 }
 }
 void muon()
@@ -316,7 +317,7 @@ int main() {
 	    	cout << "* 4. Tra sach                      *"<<endl;
 	    	cout << "* 5. Danh sach ban doc             *"<<endl;
 	    	cout << "* 6. Danh sach sach                *"<<endl;
-	    	cout << "* 7. Thoat khoi chuong trinh       *"<<endl;
+	    	cout << "* 0. Thoat khoi chuong trinh       *"<<endl;
 	    	cout << "************************************"<<endl;
 	    	cout << "chon cong viec ban muon thuc hien: ";
     cin >> u;
