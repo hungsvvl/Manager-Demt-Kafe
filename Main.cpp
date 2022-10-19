@@ -310,17 +310,16 @@ int main() {
 	int u;
 	do{
 	system ("cls");
-	 		cout << "************************************"<<endl;
-	 		cout << "*             MENU                 *"<<endl;
-	    	cout << "* 1. Dang ki ban doc               *"<<endl;
-	    	cout << "* 2. Nhap sach                     *"<<endl;
-	    	cout << "* 3. Muon sach                     *"<<endl;
-	    	cout << "* 4. Tra sach                      *"<<endl;
-	    	cout << "* 5. Danh sach ban doc             *"<<endl;
-	    	cout << "* 6. Danh sach sach                *"<<endl;
-	    	cout << "* 0. Thoat khoi chuong trinh       *"<<endl;
-	    	cout << "************************************"<<endl;
-	    	cout << "chon cong viec ban muon thuc hien: ";
+	 		cout << "\t\t\t\t\t************************************"<<endl;
+	 		cout << "\t\t\t\t\t*             MENU                 *"<<endl;
+	    	cout << "\t\t\t\t\t* 1. Dang ki ban doc               *"<<endl;
+	    	cout << "\t\t\t\t\t* 2. Nhap sach                     *"<<endl;
+	    	cout << "\t\t\t\t\t* 3. Muon sach                     *"<<endl;
+	    	cout << "\t\t\t\t\t* 4. Tra sach                      *"<<endl;
+	    	cout << "\t\t\t\t\t* 5. Danh sach ban doc             *"<<endl;
+	    	cout << "\t\t\t\t\t* 6. Danh sach sach                *"<<endl;
+	    	cout << "\t\t\t\t\t* 0. Thoat khoi chuong trinh       *"<<endl;
+	    	cout << "\t\t\t\t\t************************************"<<endl;
     cin >> u;
      switch(u){
 
