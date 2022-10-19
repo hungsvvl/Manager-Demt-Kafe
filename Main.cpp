@@ -258,9 +258,10 @@ void sach::inds()
         cout<<"khong co sach nao duoc nhap vao"<<endl;
     }
     else {
-    for (int i = 0; i < sosach; i++)
-    	
-        cout << "Ma sach : " << khosach[i]->ma <<"Ten sach : " << khosach[i]->ten << "So dau sach : " << khosach[i]->sodausach << endl;
+    	cout << "Ma sach\tTen sach\tSo dau sach"<<endl;
+    	for (int i = 0; i < sosach; i++){
+    		cout << khosach[i]->ma  << " \t" <<  khosach[i]->ten  << " \t" << khosach[i]->sodausach<<endl;
+		}
 }
 }
 void muon()
