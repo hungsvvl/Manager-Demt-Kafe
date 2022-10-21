@@ -36,6 +36,7 @@ public:
     static void xoadl();
     void muon(dausach* dausach);
     static void inds();
+    static void sapxep();
 };
 class sach
 {
@@ -179,12 +180,30 @@ void bandoc::inds()
          cout<<"khong co ban doc nao trong thu vien"<<endl;
      }
     else {
-		cout << "Ma\tTen\tSomuon"<<endl;
+		cout << left<<setw(20)<<"Ma"<<left<<setw(20)<<"Ten"<<left<<setw(20)<<"Somuon"<<endl;
+		cout << "------------------------------------------------------------"<<endl;
     	for (int i = 0; i < sobandoc; i++)
-        	cout << cacbandoc[i]->ma << "\t" << cacbandoc[i]->ten << "\t" << cacbandoc[i]->somuon<<endl;
+        	cout << left<<setw(20)<<cacbandoc[i]->ma << left<<setw(20)<< cacbandoc[i]->ten<< left<<setw(20)<< cacbandoc[i]->somuon <<endl;
      }
 }
-
+void bandoc::sapxep(){
+	if (sobandoc==0){
+         cout<<"khong co ban doc nao trong thu vien"<<endl;
+     }
+    else {
+    	for (int i=0;i<sobandoc-2;i++){
+    		for (int j =sobandoc; j>i; j--){
+    			if (cacbandoc[i]->somuon < cacbandoc[j-1]->somuon){
+    				swap(cacbandoc[i]->somuon, cacbandoc[j-1]->somuon);
+				}
+			
+	
+				cout << left<<setw(20)<<"Ma"<<left<<setw(20)<<"Ten"<<left<<setw(20)<<"Somuon"<<endl;
+				cout << "------------------------------------------------------------"<<endl;
+		    	for (int i = 0; i < sobandoc; i++)
+		        	cout << left<<setw(20)<<cacbandoc[i]->ma << left<<setw(20)<< cacbandoc[i]->ten<< left<<setw(20)<< cacbandoc[i]->somuon <<endl;
+		        }}}
+}
 int sach::sosach = 0;
 sach* sach::khosach[500];
 sach::sach(char* ma_, char* ten_, int n)
@@ -258,9 +277,10 @@ void sach::inds()
         cout<<"khong co sach nao duoc nhap vao"<<endl;
     }
     else {
-    	cout << "Ma sach\tTen sach\tSo dau sach"<<endl;
+    	cout << left<< setw(20)<< "Ma sach"<<left<<setw(20)<<"Ten sach"<<left<<setw(20)<<"so dau sach"<<endl;
+    	cout<<"-------------------------------------------------------------"<<endl;
     	for (int i = 0; i < sosach; i++){
-    		cout << khosach[i]->ma  << " \t" <<  khosach[i]->ten  << " \t" << khosach[i]->sodausach<<endl;
+    		cout <<left<<setw(20)<< khosach[i]->ma  << left<<setw(20) <<  khosach[i]->ten  <<left<<setw(20)<< khosach[i]->sodausach<<endl;
 		}
 }
 }
@@ -318,55 +338,57 @@ int main() {
 	    	cout << "\t\t\t\t\t* 4. Tra sach                      *"<<endl;
 	    	cout << "\t\t\t\t\t* 5. Danh sach ban doc             *"<<endl;
 	    	cout << "\t\t\t\t\t* 6. Danh sach sach                *"<<endl;
+	    	cout << "\t\t\t\t\t* 7. Sap xep so ban doc            *"<<endl;
 	    	cout << "\t\t\t\t\t* 0. Thoat khoi chuong trinh       *"<<endl;
 	    	cout << "\t\t\t\t\t************************************"<<endl;
+	cout << "Chon len ban muon thuc hien: ";
     cin >> u;
-     switch(u){
-
-    case 1 : 
-    {
-	
-      bandoc::dangki();
-      system("pause");
-      break;
-  }
-      case 2: 
-      {
+    switch(u){
+    case 1: {
+    	cout<<"Dang ki ban doc"<<endl;
+      	bandoc::dangki();
+      	system("pause");
+      	break;
+	}
+    case 2: {
+    	cout<<"Nhap sach"<<endl;
       	sach::nhapsach();
       	system("pause");
       	break;
-      }
-    case 3:
-    	{
+    }
+    case 3: {
+    	cout<<"Muon Sach"<<endl;
       	muon();
       	system("pause");
     break;
-}
-    case 4 :
-	{
+	}
+    case 4 : {
+    	cout<<"Tra sach"<<endl;
     	tra();
 		system("pause");
 		break;
 	}
-
-    case 5: 
-	{
-			bandoc::inds();
-			system("pause");
+    case 5: {
+    	cout<<"Danh sach ban doc"<<endl;
+		bandoc::inds();
+		system("pause");
 		break;
-  }
-
-    case 6:
-    	{
+  	}
+	case 6: {
+		cout<<"Danh sach sach"<<endl;
       	sach::inds();
       	system("pause");
-    break;
-}
-    case 0:
-    	{
-		
-    break;
-}
+    	break;
+	}
+	case 7: {
+		cout<<"Danh sach cac ban doc muon nhieu nhat: "<<endl;
+      	bandoc::sapxep();
+      	system("pause");
+    	break;
+	}
+    case 0:{	
+    	break;
+	}
     default: "nhap lai";
     system("pause");
     break;
