@@ -24,7 +24,7 @@ public:
         strcpy(ten, t);
         somuon = 0;
     }
-    ~bandoc()
+    bandoc()
     {
         delete[] ma;
         delete[] ten;
@@ -50,7 +50,7 @@ private:
     static sach* khosach[500];
 public:
     sach(char* m, char* t, int n);
-    ~sach();
+    sach();
     dausach* timchuamuon();
     static sach* timsach(char* masach);
     static dausach* timdausach(char*, int);
@@ -84,7 +84,7 @@ public:
         : sach1(right), id(_id), muon(0)
     {
     }
-    ~dausach()
+    dausach()
     {
         if (muon) delete muon;
     }
@@ -217,7 +217,7 @@ sach::sach(char* ma_, char* ten_, int n)
     for (int i = 0; i < sodausach; i++)
         cacdausach[i] = new dausach(this, i + 1);
 }
-sach::~sach()
+sach::sach()
 {
     delete[] ma;
     delete[] ten;
@@ -341,7 +341,7 @@ int main() {
 	    	cout << "\t\t\t\t\t* 7. Sap xep so ban doc            *"<<endl;
 	    	cout << "\t\t\t\t\t* 0. Thoat khoi chuong trinh       *"<<endl;
 	    	cout << "\t\t\t\t\t************************************"<<endl;
-	cout << "Chon len ban muon thuc hien: ";
+	cout << "Chon cong viec can thuc hien: ";
     cin >> u;
     switch(u){
     case 1: {
