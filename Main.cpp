@@ -189,20 +189,22 @@ void bandoc::inds()
 void bandoc::sapxep(){
 	if (sobandoc==0){
          cout<<"khong co ban doc nao trong thu vien"<<endl;
-     }
+    }
     else {
+    	cout<<"Danh sach cac ban doc muon nhieu nhat: "<<endl;
     	for (int i=0;i<sobandoc-2;i++){
     		for (int j =sobandoc; j>i; j--){
     			if (cacbandoc[i]->somuon < cacbandoc[j-1]->somuon){
     				swap(cacbandoc[i]->somuon, cacbandoc[j-1]->somuon);
 				}
-			
-	
-				cout << left<<setw(20)<<"Ma"<<left<<setw(20)<<"Ten"<<left<<setw(20)<<"Somuon"<<endl;
+				
+			}
+		}
+		cout << left<<setw(20)<<"Ma"<<left<<setw(20)<<"Ten"<<left<<setw(20)<<"Somuon"<<endl;
 				cout << "------------------------------------------------------------"<<endl;
 		    	for (int i = 0; i < sobandoc; i++)
 		        	cout << left<<setw(20)<<cacbandoc[i]->ma << left<<setw(20)<< cacbandoc[i]->ten<< left<<setw(20)<< cacbandoc[i]->somuon <<endl;
-		        }}}
+		        }
 }
 int sach::sosach = 0;
 sach* sach::khosach[500];
@@ -381,7 +383,6 @@ int main() {
     	break;
 	}
 	case 7: {
-		cout<<"Danh sach cac ban doc muon nhieu nhat: "<<endl;
       	bandoc::sapxep();
       	system("pause");
     	break;
