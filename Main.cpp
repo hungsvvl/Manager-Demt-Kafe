@@ -304,7 +304,9 @@ void muon()
 }
 void tra()
 {
+	int k;
     char mabd[80], mas[80];
+    cin.getline(mabd, sizeof(k));
     cout << "Ma ban doc : ";
     cin.getline(mabd, sizeof(mabd));
     bandoc* bd = bandoc::timbd(mabd);
