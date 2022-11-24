@@ -1,8 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-#include <conio.h>
-#include <iomanip>
 class sach;
 class dausach;
 class phieumuon;
