@@ -34,6 +34,7 @@ public:
     static void xoadl();
     void muon(dausach* dausach);
     static void inds();
+    static void ds2();
     static void sapxep();
 };
 class sach
@@ -110,11 +111,21 @@ void bandoc::dangki()
     cin.getline(ma, sizeof(k));
     cout << "Ma ban doc : ";
     cin.getline(ma, sizeof(ma));
+//    	int n=0;
+//    	for (int i = 0; i < sobandoc; i++){
+//    		ma==cacbandoc[i]->ma;
+//    		n++;
+//    		}
+//    if(n>0){
+//    	cout<<"ma so bi trung"<<endl;
+//		}
+	
     char ten[80];
     cout << "Ten ban doc : ";
     cin.getline(ten, sizeof(ten));
     cacbandoc[sobandoc++] = new bandoc(ma, ten);
-    cout << " Ban doc " << ten << " voi ma so la "<< ma << " da duoc dang ki "<<endl;
+    cout << " Ban doc " << ten << " voi ma so la "<< ma << " da duoc dang ki "<<endl;	
+
 }
 bandoc* bandoc::timbd(char* ma)
 {
@@ -169,6 +180,7 @@ void bandoc::tra(dausach* right)
             cout << "Ban da tra xong sach \n";
             return;
         }
+
     cout << "Ban da ko muon quyen sach nay \n";
 }
 void bandoc::inds()
@@ -250,20 +262,29 @@ dausach* sach::timdausach(char* masach, int id)
 }
 void sach::nhapsach()
 {
+	
 	int h;
     char ma[80];
     cin.getline(ma, sizeof(h));
     cout << "Ma sach :";
     cin.getline(ma, sizeof(ma));
+    int i;
+    
     char ten[80];
     cout << "Ten sach : ";
     cin.getline(ten, sizeof(ten));
     int n;
     cout << "So dau sach : ";
+    
     cin >> n;
+    if(n>0){
     cin.ignore(1);
     khosach[sosach++] = new sach(ma, ten, n);
     cout << "Sach nay da duoc nhap vao \n";
+    }
+    else{
+    	cout<<"So dau sach khong dung, vui long nhap lai."<<endl;
+	}
 }
 void sach::xoadl()
 {
@@ -328,6 +349,22 @@ void tra()
     }
     bd->tra(ds);
 }
+void bandoc::ds2()
+
+{
+
+	if (sobandoc==0){
+         cout<<"khong co ban doc nao trong thu vien"<<endl;
+     }
+    else {
+    	cout << left<<setw(20)<<"Ma"<<left<<setw(20)<<"Ten"<<left<<setw(20)<<"Somuon"<<endl;
+    	cout << "------------------------------------------------------------"<<endl;
+    	for(int i = 0; i<sobandoc ; i++){
+    		if (cacbandoc[i]->somuon>4){
+       		cout << left<<setw(20)<<cacbandoc[i]->ma << left<<setw(20)<< cacbandoc[i]->ten<< left<<setw(20)<< cacbandoc[i]->somuon <<endl;}
+     }
+}
+}
 int main() {
 	int u;
 	do{
@@ -341,6 +378,7 @@ int main() {
 	    	cout << "\t\t\t\t\t* 5. Danh sach ban doc             *"<<endl;
 	    	cout << "\t\t\t\t\t* 6. Danh sach sach                *"<<endl;
 	    	cout << "\t\t\t\t\t* 7. Sap xep so ban doc            *"<<endl;
+	    	cout << "\t\t\t\t\t* 8. Danh sach muon nhieu hon 2    *"<<endl;
 	    	cout << "\t\t\t\t\t* 0. Thoat khoi chuong trinh       *"<<endl;
 	    	cout << "\t\t\t\t\t************************************"<<endl;
 	cout << "Chon cong viec can thuc hien: ";
@@ -384,6 +422,11 @@ int main() {
 	}
 	case 7: {
       	bandoc::sapxep();
+      	system("pause");
+    	break;
+	}
+	case 8: {
+      	bandoc::ds2();
       	system("pause");
     	break;
 	}
